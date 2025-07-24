@@ -229,6 +229,27 @@ public class TypeChecker : MonoBehaviour
 
     private void checkRight()
     {
+        for (int i = 0; i < maxletters;)
+        {
+            //Check for greens
+            if (currentWord[i] == guessWord[i])
+            {
+                blankTiles[i].GetComponent<SpriteRenderer>().color = Color.green;
+            }
+            //if not green check if yellow
+            else
+            {
+                for (int j = 0; j < maxletters;)
+                {
+                    if (currentWord[i] == guessWord[j])
+                    {
+                        blankTiles[i].GetComponent <SpriteRenderer>().color = Color.yellow;
+                    }
+                    j++;
+                }
+            }
+            i++;
+        }
         if (currentWord == guessWord)
         {
             Debug.Log("Word is Right!");
