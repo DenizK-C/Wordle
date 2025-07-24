@@ -283,9 +283,10 @@ MonoBehaviour:
   - {fileID: 1670107413}
   - {fileID: 1649375483}
   - {fileID: 971256677}
+  currentWord: 
   blanktile: {fileID: 5306407038827146947, guid: beaf574aca4465a498ceaccba442e599, type: 3}
-  tilenum: 0
   maxletters: 5
+  guessWord: BALLS
 --- !u!1 &338938399
 GameObject:
   m_ObjectHideFlags: 0
