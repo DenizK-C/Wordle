@@ -5,6 +5,7 @@ public class TypeChecker : MonoBehaviour
 {
     public Sprite[] letterTiles;
     public GameObject[] blankTiles;
+    public GameObject[] blankRows;
     public string currentWord;
    
     public Sprite blanktile;
@@ -13,7 +14,56 @@ public class TypeChecker : MonoBehaviour
 
 
     private int tilenum = 0;
+    private int currentrow = 0;
 
+    private void Start()
+    {
+        blankTiles[0] = blankRows[currentrow].transform.Find("Row1Blank1").gameObject;
+        blankTiles[1] = blankRows[currentrow].transform.Find("Row1Blank2").gameObject;
+        blankTiles[2] = blankRows[currentrow].transform.Find("Row1Blank3").gameObject;
+        blankTiles[3] = blankRows[currentrow].transform.Find("Row1Blank4").gameObject;
+    }
+
+    private void changeRow(int guess)
+    {
+        switch (guess)
+        {
+            case 1:
+                blankTiles[0] = blankRows[currentrow].transform.Find("Row2Blank1").gameObject;
+                blankTiles[1] = blankRows[currentrow].transform.Find("Row2Blank2").gameObject;
+                blankTiles[2] = blankRows[currentrow].transform.Find("Row2Blank3").gameObject;
+                blankTiles[3] = blankRows[currentrow].transform.Find("Row2Blank4").gameObject;
+                break;
+
+            case 2:
+                blankTiles[0] = blankRows[currentrow].transform.Find("Row3Blank1").gameObject;
+                blankTiles[1] = blankRows[currentrow].transform.Find("Row3Blank2").gameObject;
+                blankTiles[2] = blankRows[currentrow].transform.Find("Row3Blank3").gameObject;
+                blankTiles[3] = blankRows[currentrow].transform.Find("Row3Blank4").gameObject;
+                break;
+
+            case 3:
+                blankTiles[0] = blankRows[currentrow].transform.Find("Row4Blank1").gameObject;
+                blankTiles[1] = blankRows[currentrow].transform.Find("Row4Blank2").gameObject;
+                blankTiles[2] = blankRows[currentrow].transform.Find("Row4Blank3").gameObject;
+                blankTiles[3] = blankRows[currentrow].transform.Find("Row4Blank4").gameObject;
+                break;
+
+            case 4:
+                blankTiles[0] = blankRows[currentrow].transform.Find("Row5Blank1").gameObject;
+                blankTiles[1] = blankRows[currentrow].transform.Find("Row5Blank2").gameObject;
+                blankTiles[2] = blankRows[currentrow].transform.Find("Row5Blank3").gameObject;
+                blankTiles[3] = blankRows[currentrow].transform.Find("Row5Blank4").gameObject;
+                break;
+
+            case 5:
+                blankTiles[0] = blankRows[currentrow].transform.Find("Row6Blank1").gameObject;
+                blankTiles[1] = blankRows[currentrow].transform.Find("Row6Blank2").gameObject;
+                blankTiles[2] = blankRows[currentrow].transform.Find("Row6Blank3").gameObject;
+                blankTiles[3] = blankRows[currentrow].transform.Find("Row6Blank4").gameObject;
+                break;
+        }
+    }
 
     private void CheckLetter()
     {
@@ -243,7 +293,7 @@ public class TypeChecker : MonoBehaviour
                 {
                     if (currentWord[i] == guessWord[j])
                     {
-                        blankTiles[i].GetComponent <SpriteRenderer>().color = Color.yellow;
+                        blankTiles[i].GetComponent<SpriteRenderer>().color = Color.yellow;
                     }
                     j++;
                 }
