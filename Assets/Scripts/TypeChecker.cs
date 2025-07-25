@@ -9,12 +9,12 @@ public class TypeChecker : MonoBehaviour
 
 
     private string currentWord;
-    private Sprite blanktile;
+    public Sprite blanktile;
     private int maxletters = 5;
     private string guessWord = "GIRLY";
 
 
-    private int tilenum = 0;
+    public int tilenum = 0;
     public int currentrow = 0;
 
     private void Start()
