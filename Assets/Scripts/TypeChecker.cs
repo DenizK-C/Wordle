@@ -6,13 +6,11 @@ public class TypeChecker : MonoBehaviour
     public Sprite[] letterTiles;
     public GameObject[] blankTiles;
     public GameObject[] blankRows;
-
+    public Sprite blanktile;
 
     private string currentWord;
-    public Sprite blanktile;
     private int maxletters = 5;
     private string guessWord = "GIRLY";
-
 
     public int tilenum = 0;
     public int currentrow = 0;
@@ -305,7 +303,16 @@ public class TypeChecker : MonoBehaviour
                     j++;
                 }
             }
-            i++;
+                i++;
+        }
+
+        for (int k = 0; k < maxletters;)
+        {
+            if (blankTiles[k].GetComponent<SpriteRenderer>().color == Color.white)
+            {
+                blankTiles[k].GetComponent <SpriteRenderer>().color = Color.gray;
+            }
+            k++;
         }
         if (currentWord == guessWord)
         {
