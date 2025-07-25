@@ -362,6 +362,7 @@ MonoBehaviour:
   - {fileID: 1479363893}
   - {fileID: 84413373}
   - {fileID: 1963659048}
+  allLetters: {fileID: 630245512}
   blanktile: {fileID: 5306407038827146947, guid: beaf574aca4465a498ceaccba442e599, type: 3}
   tilenum: 0
   currentrow: 0
