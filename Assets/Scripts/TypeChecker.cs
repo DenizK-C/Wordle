@@ -11,7 +11,8 @@ public class TypeChecker : MonoBehaviour
 
     private string currentWord;
     private int maxletters = 5;
-    private string guessWord = "GIRLY";
+    private string guessWord = "BUNDA";
+      
 
     public int tilenum = 0;
     public int currentrow = 0;
