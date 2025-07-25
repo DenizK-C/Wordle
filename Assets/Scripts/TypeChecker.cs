@@ -6,6 +6,7 @@ public class TypeChecker : MonoBehaviour
     public Sprite[] letterTiles;
     public GameObject[] blankTiles;
     public GameObject[] blankRows;
+    public GameObject allLetters;
     public Sprite blanktile;
 
     private string currentWord;
@@ -308,12 +309,15 @@ public class TypeChecker : MonoBehaviour
 
         for (int k = 0; k < maxletters;)
         {
+            //set find child in parent all letters with the name currentwordk to gray
+            allLetters.transform.Find(currentWord[k].ToString()).GetComponent<SpriteRenderer>().color = Color.gray;
             if (blankTiles[k].GetComponent<SpriteRenderer>().color == Color.white)
             {
                 blankTiles[k].GetComponent <SpriteRenderer>().color = Color.gray;
             }
             k++;
         }
+
         if (currentWord == guessWord)
         {
             Debug.Log("Word is Right!");
