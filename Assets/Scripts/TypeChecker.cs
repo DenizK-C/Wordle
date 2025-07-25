@@ -6,11 +6,12 @@ public class TypeChecker : MonoBehaviour
     public Sprite[] letterTiles;
     public GameObject[] blankTiles;
     public GameObject[] blankRows;
-    public string currentWord;
-   
-    public Sprite blanktile;
-    public int maxletters = 5;
-    public string guessWord = "BALLS";
+
+
+    private string currentWord;
+    private Sprite blanktile;
+    private int maxletters = 5;
+    private string guessWord = "GIRLY";
 
 
     private int tilenum = 0;
