@@ -14,7 +14,7 @@ public class TypeChecker : MonoBehaviour
 
 
     private int tilenum = 0;
-    private int currentrow = 0;
+    public int currentrow = 0;
 
     private void Start()
     {
@@ -22,6 +22,7 @@ public class TypeChecker : MonoBehaviour
         blankTiles[1] = blankRows[currentrow].transform.Find("Row1Blank2").gameObject;
         blankTiles[2] = blankRows[currentrow].transform.Find("Row1Blank3").gameObject;
         blankTiles[3] = blankRows[currentrow].transform.Find("Row1Blank4").gameObject;
+        blankTiles[4] = blankRows[currentrow].transform.Find("Row1Blank5").gameObject;
     }
 
     private void changeRow(int guess)
@@ -33,6 +34,7 @@ public class TypeChecker : MonoBehaviour
                 blankTiles[1] = blankRows[currentrow].transform.Find("Row2Blank2").gameObject;
                 blankTiles[2] = blankRows[currentrow].transform.Find("Row2Blank3").gameObject;
                 blankTiles[3] = blankRows[currentrow].transform.Find("Row2Blank4").gameObject;
+                blankTiles[4] = blankRows[currentrow].transform.Find("Row2Blank5").gameObject;
                 break;
 
             case 2:
@@ -40,6 +42,7 @@ public class TypeChecker : MonoBehaviour
                 blankTiles[1] = blankRows[currentrow].transform.Find("Row3Blank2").gameObject;
                 blankTiles[2] = blankRows[currentrow].transform.Find("Row3Blank3").gameObject;
                 blankTiles[3] = blankRows[currentrow].transform.Find("Row3Blank4").gameObject;
+                blankTiles[4] = blankRows[currentrow].transform.Find("Row3Blank5").gameObject;
                 break;
 
             case 3:
@@ -47,6 +50,7 @@ public class TypeChecker : MonoBehaviour
                 blankTiles[1] = blankRows[currentrow].transform.Find("Row4Blank2").gameObject;
                 blankTiles[2] = blankRows[currentrow].transform.Find("Row4Blank3").gameObject;
                 blankTiles[3] = blankRows[currentrow].transform.Find("Row4Blank4").gameObject;
+                blankTiles[4] = blankRows[currentrow].transform.Find("Row4Blank5").gameObject;
                 break;
 
             case 4:
@@ -54,6 +58,7 @@ public class TypeChecker : MonoBehaviour
                 blankTiles[1] = blankRows[currentrow].transform.Find("Row5Blank2").gameObject;
                 blankTiles[2] = blankRows[currentrow].transform.Find("Row5Blank3").gameObject;
                 blankTiles[3] = blankRows[currentrow].transform.Find("Row5Blank4").gameObject;
+                blankTiles[4] = blankRows[currentrow].transform.Find("Row5Blank5").gameObject;
                 break;
 
             case 5:
@@ -61,6 +66,7 @@ public class TypeChecker : MonoBehaviour
                 blankTiles[1] = blankRows[currentrow].transform.Find("Row6Blank2").gameObject;
                 blankTiles[2] = blankRows[currentrow].transform.Find("Row6Blank3").gameObject;
                 blankTiles[3] = blankRows[currentrow].transform.Find("Row6Blank4").gameObject;
+                blankTiles[4] = blankRows[currentrow].transform.Find("Row6Blank5").gameObject;
                 break;
         }
     }
@@ -307,6 +313,10 @@ public class TypeChecker : MonoBehaviour
         else
         {
             Debug.Log("Switch to next column!");
+            currentrow++;
+            changeRow(currentrow);
+            currentWord = "";
+            tilenum = 0;
         }
     }
 }
