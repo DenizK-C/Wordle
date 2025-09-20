@@ -11,7 +11,7 @@ public class TypeChecker : MonoBehaviour
 
     private string currentWord;
     private int maxletters = 5;
-    private string guessWord = "BUNDA";
+    [SerializeField]private string guessWord = "";
       
 
     public int tilenum = 0;
